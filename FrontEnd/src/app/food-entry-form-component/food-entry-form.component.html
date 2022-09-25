@@ -1,0 +1,35 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <div class="form-group">
+        <div class="input-group mb-3">
+          <input [(ngModel)]="selectedTypeAheadFood" [typeahead]="listOfFoods"
+            typeaheadOptionField="selectedTypeAheadFood.name" (typeaheadOnSelect)="onSelect($event)"
+            class="form-control" placeholder="Enter Name Of Food">
+        </div>
+
+        <div class="input-group mb-3">
+          <label class="input-group-text">Meal Type</label>
+          <select class="form-control" [(ngModel)]="currentFoodEntry">
+            <option *ngFor="let type of listOfFoodEntryTypes" [ngValue]="type">{{type}}</option>
+          </select>
+        </div>
+
+
+      </div>
+
+
+
+    </div>
+  </div>
+  <div class="row mt-4">
+    <div class="col-4"></div>
+    <div class="col-4 text-center">
+      <button type="submit" class="btn btn-primary btn-lg btn-block" (click)="onSubmit()">
+        Add
+      </button>
+    </div>
+    <div class="col-4"></div>
+  </div>
+
+</div>

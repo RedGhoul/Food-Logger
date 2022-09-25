@@ -1,0 +1,19 @@
+<div class="modal-header">
+  <h4 class="modal-title pull-left">{{title}}</h4>
+  <button type="button" class="btn-close close pull-right" aria-label="Close" (click)="closeModal()">
+    <span aria-hidden="true" class="visually-hidden">&times;</span>
+  </button>
+</div>
+<app-food-entry-form (finishedFormSubmission)="closeModal()"></app-food-entry-form>
+<div class="row mt-3">
+  <div class="col-2"></div>
+  <div class="col-8 text-center">
+    <a (click)="openCreateNewFood()" class="btn btn-primary btn-lg btn-block">
+      Create New Food
+    </a>
+  </div>
+  <div class="col-2"></div>
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-default" (click)="closeModal()">{{closeBtnName}}</button>
+</div>

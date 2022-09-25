@@ -1,0 +1,72 @@
+<div class="container">
+  <alert *ngIf="shouldShowAlert" type="danger" class="mt-4" [dismissible]="isDismissible">
+    <strong>Oh snap!</strong> Error Getting Your Foods
+  </alert>
+  <div class="row mt-4">
+    <div class="col-4">
+      <h2>All Foods</h2>
+    </div>
+    <div class="col-4"></div>
+    <div class="col-4 text-center">
+      <button type="button" class="btn btn-primary" (click)="openAddNewFoodModal()">Create New Food</button>
+    </div>
+
+  </div>
+  <div class="row mt-3">
+    <div class="col-12">
+      <div class="row">
+
+        <div class="col-12">
+          <div class="row">
+            <div class="col-4"></div>
+            <div class="col-4 text-center">
+              <h4>Foods</h4>
+            </div>
+            <div class="col-4"></div>
+          </div>
+          <table class="table mt-3">
+            <thead>
+            <tr class="text-center">
+              <th class="text-center">Name</th>
+              <th class="text-center">Calories</th>
+              <th class="text-center">Proteins</th>
+              <th class="text-center">Fats</th>
+              <th class="text-center">Sodium</th>
+              <th class="text-center">Carbohydrates</th>
+              <th class="text-center">Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr class="text-center" *ngFor="let food of allFoods">
+              <td class="text-center">{{food.name}}</td>
+              <td class="text-center">{{food.calories}}</td>
+              <td class="text-center">{{food.proteins}}</td>
+              <td class="text-center">{{food.fat}}</td>
+              <td class="text-center">{{food.sodium}}</td>
+              <td class="text-center">{{food.carbohydrates}}</td>
+              <td class="text-center">
+                <button class="btn btn-danger" (click)="openEditFoodModal(food.id)">Edit</button>
+              </td>
+            </tr>
+            </tbody>
+          </table>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <div class="row mt-3">
+    <div class="col-12">
+      <div class="row">
+        <div class="col-4"></div>
+        <div class="col-4 d-flex justify-content-center">
+          <pagination [totalItems]="foodCount" (pageChanged)="pageChanged($event)"></pagination>
+        </div>
+        <div class="col-4"></div>
+
+      </div>
+    </div>
+  </div>
+
+</div>

@@ -1,0 +1,39 @@
+<div class="row">
+
+  <div class="col-12">
+    <div class="row">
+      <div class="col-4"></div>
+      <div class="col-4 text-center">
+        <h4>{{tableName}}</h4>
+      </div>
+      <div class="col-4"></div>
+    </div>
+    <table class="table mt-3">
+      <thead>
+        <tr class="text-center">
+          <th class="text-center">Name</th>
+          <th class="text-center">Calories</th>
+          <th class="text-center">Proteins</th>
+          <th class="text-center">Fats</th>
+          <th class="text-center">Sodium</th>
+          <th class="text-center">Carbohydrates</th>
+          <th class="text-center">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="text-center" *ngFor="let entry of foodEntries">
+          <td class="text-center">{{entry.food?.name}}</td>
+          <td class="text-center">{{entry.food?.calories}}</td>
+          <td class="text-center">{{entry.food?.proteins}}</td>
+          <td class="text-center">{{entry.food?.fat}}</td>
+          <td class="text-center">{{entry.food?.sodium}}</td>
+          <td class="text-center">{{entry.food?.carbohydrates}}</td>
+          <td class="text-center">
+            <button class="btn btn-danger" (click)="removeFood(entry.id)">X</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+</div>

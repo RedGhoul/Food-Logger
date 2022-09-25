@@ -1,0 +1,43 @@
+<div class="modal-header">
+  <h4 class="modal-title pull-left">{{title}}</h4>
+  <button type="button" class="btn-close close pull-right" aria-label="Close" (click)="closeModal()">
+    <span aria-hidden="true" class="visually-hidden">&times;</span>
+  </button>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <form [formGroup]="foodForm" (ngSubmit)="onSubmit()" novalidate>
+        <div class="mb-3">
+          <label for="name" class="form-label">Name</label>
+          <input class="form-control" id="name" name="name" formControlName="name">
+        </div>
+        <div class="mb-3">
+          <label for="calories" class="form-label">Calories</label>
+          <input class="form-control" id="calories" name="calories" formControlName="calories">
+        </div>
+        <div class="mb-3">
+          <label for="carbohydrates" class="form-label">Carbohydrates</label>
+          <input class="form-control" id="carbohydrates" name="carbohydrates" formControlName="carbohydrates">
+        </div>
+        <div class="mb-3">
+          <label for="proteins" class="form-label">proteins</label>
+          <input class="form-control" id="proteins" name="proteins" formControlName="proteins">
+        </div>
+        <div class="mb-3">
+          <label for="fat" class="form-label">fat</label>
+          <input class="form-control" id="fat" name="fat" formControlName="fat">
+        </div>
+        <div class="mb-3">
+          <label for="sodium" class="form-label">sodium</label>
+          <input class="form-control" id="sodium" name="sodium" formControlName="sodium">
+        </div>
+        <button class="btn btn-primary btn-lg btn-block" type="submit" [disabled]="!foodForm.valid">Submit</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<div class="modal-footer">
+  <button type="button" class="btn btn-default" (click)="closeModal()">{{closeBtnName}}</button>
+</div>

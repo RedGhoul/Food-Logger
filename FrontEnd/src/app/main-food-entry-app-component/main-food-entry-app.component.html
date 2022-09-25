@@ -1,0 +1,57 @@
+<div class="container">
+  <div class="row mt-4">
+    <div class="col-4">
+      <h2>Current Entries</h2>
+    </div>
+    <div class="col-4"></div>
+    <div class="col-4 text-center">
+
+      <button type="button" class="btn btn-primary" (click)="openAddFoodEntryModal()">Create New Entry</button>
+    </div>
+
+  </div>
+  <div class="row mt-3">
+    <div class="col-12 text-center">
+      <h2>Current Date: {{today}}</h2>
+    </div>
+  </div>
+  <div class="row mt-3">
+    <div class="col-12 text-center">
+      <h5>Current Totals</h5>
+    </div>
+  </div>
+  <div class="row mt-3">
+    <div class="col-3">
+      <h5>Protein: {{this.foodStats.totalProtein}} g</h5>
+    </div>
+    <div class="col-3">
+      <h5>Calories: {{this.foodStats.totalCalories}} g</h5>
+    </div>
+    <div class="col-3">
+      <h5>Fats: {{this.foodStats.totalFats}}g</h5>
+    </div>
+    <div class="col-3">
+      <h5>Sodium:  {{this.foodStats.totalSodium}}mg</h5>
+    </div>
+  </div>
+  <div class="row mt-3">
+    <div class="col-12">
+      <app-food-entry-table-component [tableName]="'Breakfast'" [foodEntries]="breakfastEntries"></app-food-entry-table-component>
+    </div>
+  </div>
+  <div class="row mt-3">
+    <div class="col-12">
+      <app-food-entry-table-component [tableName]="'Lunch'" [foodEntries]="lunchEntries"></app-food-entry-table-component>
+    </div>
+  </div>
+  <div class="row mt-3">
+    <div class="col-12">
+      <app-food-entry-table-component [tableName]="'Dinner'" [foodEntries]="dinnerEntries"></app-food-entry-table-component>
+    </div>
+  </div>
+  <div class="row mt-3">
+    <div class="col-12">
+      <app-food-entry-table-component [tableName]="'Snacks'" [foodEntries]="snackEntries"></app-food-entry-table-component>
+    </div>
+  </div>
+</div>
